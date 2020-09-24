@@ -194,7 +194,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-03-05
+VENDOR_SECURITY_PATCH := 2020-05-05
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
@@ -228,6 +228,9 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
+# Notch
+TARGET_PROVIDES_OWN_NO_CUTOUT_OVERLAY=true
 
 # inherit from the proprietary version
 -include vendor/asus/X00QD/BoardConfigVendor.mk

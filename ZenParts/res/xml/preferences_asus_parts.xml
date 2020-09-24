@@ -31,6 +31,21 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="notification_led"
+        android:title="@string/notification_title">
+
+        <com.asus.zenparts.preferences.NotificationLedSeekBarPreference
+            android:key="notification_led_brightness"
+            android:title="@string/notification_led_title"
+            android:icon="@drawable/ic_led"
+            android:max="100"
+            app:min="1"
+            app:units="%"
+            android:defaultValue="100" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="vibration"
         android:title="@string/vibration_title">
 
@@ -91,7 +106,49 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="boost"
+        android:title="@string/boost_title" >
+
+        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+            android:key="touchboost"
+            android:defaultValue="false"
+            android:title="@string/touchboost_title"
+            android:icon="@drawable/ic_boost"
+            android:summary="@string/touchboost_summary" />
+
+        <com.asus.zenparts.preferences.SecureSettingListPreference
+            android:key="gpuboost"
+            android:dialogTitle="@string/gpuboost_dialogTitle"
+            android:entries="@array/gpuboost_profiles"
+            android:entryValues="@array/gpuboost_values"
+            android:icon="@drawable/ic_gpuboost" 
+            android:defaultValue="0"
+            android:title="@string/gpuboost_title" />
+
+        <com.asus.zenparts.preferences.SecureSettingListPreference
+            android:key="cpuboost"
+            android:dialogTitle="@string/cpuboost_dialogTitle"
+            android:entries="@array/cpuboost_profiles"
+            android:entryValues="@array/cpuboost_values"
+            android:icon="@drawable/ic_cpuboost" 
+            android:defaultValue="0"
+            android:title="@string/cpuboost_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
             android:title="@string/touch_gestures">
+
+        <Preference
+            android:key="touchscreen_gesture_category"
+            android:icon="@drawable/ic_gestures"
+            android:title="@string/touchscreen_gesture_settings_title"
+            android:summary="@string/touchscreen_gesture_settings_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.asus.zenparts"
+                    android:targetClass="com.asus.zenparts.TouchscreenGestureSettings" />
+        </Preference>
 
         <PreferenceScreen
             android:key="ambient_display_gestures"
@@ -157,6 +214,14 @@
             android:icon="@drawable/ic_earpiece"
             android:title="@string/earpiece_gain" />
 
+        <com.asus.zenparts.preferences.SecureSettingCustomSeekBarPreference 
+            android:defaultValue="0"
+            android:key="speaker_gain" 
+            android:max="20"
+            app:min="-10" 
+            android:icon="@drawable/ic_speaker"
+            android:title="@string/speaker_gain" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -169,4 +234,29 @@
             android:icon="@drawable/ic_usb_fastcharge"
             android:summary="@string/fastcharge_summary" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="selinux"
+        android:title="@string/selinux_category">
+
+    <Preference
+        android:summary="@string/selinux_explanation_summary"
+        android:selectable="false"/>
+
+    <SwitchPreference
+        android:key="selinux_mode"
+        android:title="@string/selinux_mode_title"
+        android:summaryOn="@string/selinux_enforcing_summary"
+        android:summaryOff="@string/selinux_permissive_summary"
+        android:icon="@drawable/ic_linux" />
+
+    <SwitchPreference
+        android:key="selinux_persistence" 
+        android:title="@string/selinux_persistence_title" 
+        android:summary="@string/selinux_persistence_summary"
+        android:defaultValue="true"
+        android:icon="@drawable/ic_power" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

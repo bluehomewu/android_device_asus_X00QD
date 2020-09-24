@@ -6,7 +6,7 @@
       "remote":"pixel-gitlab"
    },
   {
-    "repository": "android_kernel_asus_ze620kl",
+    "repository": "android_kernel_asus_sdm660",
     "target_path": "kernel/asus/sdm660"
   }
 ]
