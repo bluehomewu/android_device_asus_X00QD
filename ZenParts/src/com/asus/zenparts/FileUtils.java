@@ -24,7 +24,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-class FileUtils {
+public class FileUtils {
 
     static boolean fileWritable(String filename) {
         return fileExists(filename) && new File(filename).canWrite();
@@ -37,7 +37,7 @@ class FileUtils {
         return new File(filename).exists();
     }
 
-    static void setValue(String path, int value) {
+    public static void setValue(String path, int value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -127,6 +127,14 @@ class FileUtils {
     static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if (fileValue != null) {
+            return !fileValue.equals("0");
+        }
+        return defValue;
+    }
+
+    static boolean getFilesValueAsBoolean(String filename, boolean defValue) {
+        String fileValue = readLine(filename);
+        if (fileValue != null) {
             return !fileValue.equals("N");
         }
         return defValue;
@@ -150,5 +158,13 @@ class FileUtils {
 
     static String getStringProp(String prop, String defaultValue) {
         return SystemProperties.get(prop, defaultValue);
+    }
+
+    static void setintProp(String prop, int value) {
+        SystemProperties.set(prop, String.valueOf(value));
+    }
+
+    static int getintProp(String prop, int defaultValue) {
+        return SystemProperties.getInt(prop, defaultValue);
     }
 }
