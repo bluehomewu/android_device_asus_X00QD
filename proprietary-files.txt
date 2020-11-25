@@ -287,7 +287,6 @@ lib64/libseemore.so
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libdepthmapwrapper.so
 vendor/lib/libflash_pmic.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libhal_dbg.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
@@ -1903,7 +1902,7 @@ vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
 # DPM
 framework/tcmclient.jar
-product/bin/dpmd
+product/bin/dpmd|90cdd79b564456cef2a0c011afab3896463df5e4
 product/etc/dpm/dpm.conf
 product/etc/init/dpmd.rc
 product/etc/permissions/com.qti.dpmframework.xml
@@ -2393,7 +2392,6 @@ vendor/lib/libstagefright_soft_mpeg2dec.so
 vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib/libvqzip.so
 vendor/lib/vndk/libstagefright_foundation.so
-vendor/lib/vndk/libstagefright_omx.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
@@ -2438,25 +2436,6 @@ vendor/lib64/libOmxQcelp13Enc.so
 vendor/lib64/libOmxVdec.so
 vendor/lib64/libOmxVenc.so
 vendor/lib64/libstagefrighthw.so
-
-# MotoDolbyV3
--app/MotoDolbyV3/MotoDolbyV3.apk
--product/priv-app/daxService/daxService.apk
-etc/permissions/com.motorola.dolby.dolbyui.features.xml
-etc/sysconfig/hiddenapi-whitelist-com.motorola.dolby.dolbyui.xml
-product/etc/permissions/com.dolby.daxservice.xml
-vendor/bin/hw/vendor.dolby.hardware.dms@1.0-service
-vendor/etc/init/vendor.dolby.hardware.dms@1.0-service.rc
-vendor/etc/dolby/dax-default.xml
-vendor/lib/libdapparamstorage.so
-vendor/lib/libstagefrightdolby.so
-vendor/lib/vendor.dolby.hardware.dms@1.0.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib64/libdapparamstorage.so
-vendor/lib64/libdlbdsservice.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so
-vendor/lib64/vendor.dolby.hardware.dms@1.0.so
 
 # NFC
 vendor/bin/hw/vendor.nxp.hardware.nfc@1.1-service
@@ -2576,16 +2555,6 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# Power-Hardware
-vendor/bin/hw/android.hardware.power@1.0-service
-vendor/etc/init/android.hardware.power@1.0-service.rc
-vendor/lib/hw/android.hardware.power@1.0-impl.so
-vendor/lib/hw/power.default.so
-vendor/lib/hw/power.qcom.so
-vendor/lib64/hw/android.hardware.power@1.0-impl.so
-vendor/lib64/hw/power.default.so
-vendor/lib64/hw/power.qcom.so
-
 # QMI
 etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
@@ -2640,7 +2609,7 @@ etc/sysconfig/qti_whitelist.xml
 product/etc/permissions/qcrilhook.xml
 product/etc/permissions/telephonyservice.xml
 product/framework/qcrilhook.jar
-product/framework/qti-telephony-common.jar
+product/framework/qti-telephony-common.jar|14e32b1cb0fdc9d7802414e95e41376499b51b11
 product/framework/QtiTelephonyServicelibrary.jar
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
@@ -2794,7 +2763,7 @@ product/lib64/vendor.qti.ims.callinfo@1.0.so
 product/lib64/vendor.qti.ims.rcsconfig@1.0.so
 product/lib64/vendor.qti.imsrtpservice@2.0.so
 product/lib64/vendor.qti.imsrtpservice@2.1.so
--product/priv-app/ims/ims.apk
+-product/priv-app/ims/ims.apk|bd32366296caf44cf2171a464b788004bed58156
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
@@ -3096,7 +3065,6 @@ vendor/bin/fmfactorytestserver
 vendor/bin/ftmdaemon
 vendor/bin/ftmtest
 vendor/bin/hal_proxy_daemon
-vendor/bin/hw/android.hardware.atrace@1.0-service
 vendor/bin/hw/vendor.ims.airtrigger@1.0-service
 vendor/bin/hw/vendor.ims.airtrigger@1.1-service
 vendor/bin/hw/vendor.ims.glovemode@1.0-service
@@ -3123,7 +3091,6 @@ vendor/bin/test_diag
 vendor/bin/test_module_pproc
 vendor/bin/vendor_cmd_tool
 vendor/bin/wdsdaemon
-vendor/bin/wifilearner
 vendor/bin/wigighalsvc
 vendor/bin/xtwifi-client
 vendor/bin/xtwifi-inet-agent
@@ -3145,7 +3112,6 @@ vendor/etc/ID/ASUS/Launcher/default_workspace/default_allapp.xml
 vendor/etc/ID/ASUS/Launcher/default_workspace/phone_workspace.xml
 vendor/etc/IN/ASUS/Launcher/default_workspace/default_allapp.xml
 vendor/etc/IN/ASUS/Launcher/default_workspace/phone_workspace.xml
-vendor/etc/init/android.hardware.atrace@1.0-service.rc
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/dpmQmiMgr.rc
@@ -3166,7 +3132,6 @@ vendor/etc/init/vendor.ims.airtrigger@1.0-service.rc
 vendor/etc/init/vendor.ims.airtrigger@1.1-service.rc
 vendor/etc/init/vendor.ims.glovemode@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.cryptfshw@1.0-service-qti.rc
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wigig.supptunnel@1.0-service.rc
 vendor/etc/init/vendor.rild.rc
 vendor/etc/JP/ACJ/Launcher/default_workspace/default_allapp.xml

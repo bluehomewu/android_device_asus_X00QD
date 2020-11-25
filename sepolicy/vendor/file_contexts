@@ -4,9 +4,7 @@
 # Firmware
 /firmware                                                                     u:object_r:firmware_file:s0
 /bt_firmware                                                                  u:object_r:bt_firmware_file:s0
-
-# Dolby
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
+/persist(/.*)?                                                  u:object_r:mnt_vendor_file:s0
 
 # Sensors
 /sys/devices/virtual/sensors/frgbsensor(/.*)?		u:object_r:sysfs_sensors:s0
@@ -24,8 +22,6 @@
 /(vendor|system/vendor)/bin/nvram_btwifi                                u:object_r:nvram_btwifi_exec:s0
 
 /sys/module/usb_f_qcrndis/parameters(/.*)?         u:object_r:sysfs_usb_rndis:s0
-
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.X00QD                    u:object_r:hal_lineage_touch_default_exec:s0
 
 # FPS Info
 /sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0

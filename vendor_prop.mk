@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.audio.sdk.fluencetype=fluence  \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.adm.buffering.ms=3 \
-    vendor.audio.dolby.ds2.enabled=true \
+    vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
     vendor.audio.hw.aac.encoder=true \
@@ -30,12 +30,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.passthrough=false \
     vendor.audio.offload.track.enable=true \
     vendor.audio.parser.ip.buffer.size=262144 \
-    vendor.audio.safx.pbe.enabled=true \
+    vendor.audio.safx.pbe.enabled=false \
     vendor.audio.spkr_prot.tx.sampling_rate=48000 \
     vendor.audio.tunnel.encode=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
-    vendor.audio_hal.period_size=192 \
+    vendor.audio_hal.period_size=240 \
+    vendor.audio.hal.boot.timeout.ms=20000 \
     vendor.voice.path.for.pcm.voip=false
 
 # Audio feature flags
@@ -113,6 +114,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # Charging maximum voltage
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.chg.max_volt_mv=9000
@@ -144,6 +149,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.early_phase_offset_ns=5000000 \
     debug.sf.hw=1 \
@@ -159,6 +166,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
     media.aac_51_output_enabled=true \
     media.stagefright.enable-player=true \
     media.stagefright.enable-http=true \
@@ -201,6 +210,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # QCOM cabl
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.cabl=2
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.va_aosp.support=1
+
+PRODUCT_ODM_PROPERTIES += \
+    ro.vendor.qti.va_odm.support=1
 
 # QTI
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -268,6 +283,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096 \
     ro.surface_flinger.protected_contents=true \
     ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
