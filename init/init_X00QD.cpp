@@ -123,12 +123,12 @@ void vendor_check_variant()
     if (sys.totalram > 4096ull * 1024 * 1024) {
         // Russian model
         if (region == "RU") {
-            build_fingerprint = "google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys";
+            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
             product_device = "ASUS_X00QD";
 
         // Global model
         } else {
-            build_fingerprint = "google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys";
+            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
             product_device = "ASUS_X00QD";
         }
 
