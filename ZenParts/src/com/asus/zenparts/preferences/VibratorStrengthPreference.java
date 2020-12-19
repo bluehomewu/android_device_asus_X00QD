@@ -36,7 +36,7 @@ public class VibratorStrengthPreference extends CustomSeekBarPreference {
     // #define QPNP_HAP_VMAX_MAX_MV		3596
     private static int mMinVal = 116;
     private static int mMaxVal = 3596;
-    private static int mDefVal = mMaxVal - (mMaxVal - mMinVal) / 4;
+    private static int mDefVal = 120;
     private Vibrator mVibrator;
 
     private static final String FILE_LEVEL = "/sys/class/timed_output/vibrator/vtg_level";
