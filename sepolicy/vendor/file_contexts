@@ -38,3 +38,6 @@
 /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/max_brightness  u:object_r:sysfs_graphics:s0
 /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/red/brightness  u:object_r:sysfs_graphics:s0
 /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/brightness  u:object_r:sysfs_graphics:s0
+
+# Thermal
+/vendor/bin/hw/android\.hardware\.thermal@2\.0-service\.qti                u:object_r:hal_thermal_default_exec:s0
