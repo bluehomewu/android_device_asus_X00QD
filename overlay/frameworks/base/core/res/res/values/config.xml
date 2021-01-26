@@ -261,6 +261,10 @@
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
    <bool name="config_intrusiveBatteryLed">true</bool>
+       
+    <!-- Does the battery LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
 
     <!-- Enables or disables haptic effect when the text insertion/selection handle is moved
          manually by the user. Off by default, since the expected haptic feedback may not be
@@ -620,4 +624,5 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+
 </resources>
